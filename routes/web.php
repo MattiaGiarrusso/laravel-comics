@@ -19,9 +19,12 @@ Route::get('/', function () {
 
 Route::get('/comics', function () {
     $comics = config('comics');
+    $links = config('headerLinks');
+    // $footers = config('footerLinks');
 
     $data = [
-        // 'links'=> ['CHARACTERS','COMICS','MOVIES','TV','GAMES', 'COLLECTIBLES','VIDEOS','FANS','NEWS','SHOP'],
+        'links'=> $links,
+        // 'footerLinks' => $footers,
         'comics' => $comics
     ];
 

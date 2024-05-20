@@ -1,28 +1,20 @@
 <header class="container">
     <div>
-        <img src="../resources/img/dc-logo.png" alt="">
+        <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
     </div>
 
     <nav>
         <ul>
+            @foreach ( $links as $link)
             <li>
-                <a>CHARCTERS</a>
+                @if ($link['active'])
+                    <a class="active" >{{ $link['link'] }}</a>                    
+                @else
+                    <a class="" >{{ $link['link'] }}</a> 
+                @endif
             </li>
-            <li>
-                <a>COMICS</a>
-            </li>
-            <li>
-                <a>MOVIES</a>
-            </li>
-            <li>
-                <a>TV</a>
-            </li>
-            <li>
-                <a>GAMES</a>
-            </li>
-            <li>
-                <a>COLLECTIBLES</a>
-            </li>            
+            @endforeach
+
         </ul>
     </nav>
 </header>
