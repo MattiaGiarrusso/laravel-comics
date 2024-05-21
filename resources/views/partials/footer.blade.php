@@ -4,21 +4,18 @@
        
 
         <nav class="nav-links">
+            @foreach ($footers as $singleNav)
             <div class="nav-item">
-
-                {{-- @foreach ($footers as $footer)
-                @dump($footer); --}}
-                {{-- <h4 class="uppercase">{{ $footer[array ($title)] }}</h4>
+                <h4 class="uppercase">{{ $singleNav['title'] }}</h4>
                 <ul class="ms-pdg-bottom-16">
-                    @foreach ($footers['nav'] as $link)
+                    @foreach ($singleNav['links'] as $link)
                     <li>
-                        <a href="#" alt="">{{ $footer[array ($links)] }}</a>
+                        <a href="#" alt="">{{ $link }}</a>
                     </li>
                     @endforeach
-                </ul> --}}
-                {{-- @endforeach --}}
-        
+                </ul>                
             </div>
+            @endforeach 
             
         </nav>
     
